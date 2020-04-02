@@ -81,15 +81,38 @@ function convertToRoman(num) {
                                           // in the for loop to follow. i.e. i=0   
     let finalRomanNumArr = [];
     for(let i=0; i<reversedArr.length; i++){
-        console.log(romanNumArr[i][reversedArr[i]])             // iterate through number array and push roman numerals to
+        // console.log(romanNumArr[i][reversedArr[i]])             // iterate through number array and push roman numerals to
         finalRomanNumArr.push(romanNumArr[i][reversedArr[i]])   //empty array
     }
 
     let finalNum = finalRomanNumArr.reverse().join("");         // the array is currently in the order 1, 10, 100 ..etc, so
     console.log(finalNum);                                      // reverse in place and join() to form a string 
-
- return finalNum;
+    
+    // console.log(finalNum);
+    return finalNum;
 }
 
 
-convertToRoman(2836);
+convertToRoman(10);
+
+
+
+  function output() {
+    var answer = convertToRoman(document.getElementById("user-input").value);
+
+    if (answer.isAlpha()) {
+      document.getElementById("outputDiv").innerHTML = answer;
+    }else{
+        pass    
+    }
+   
+  }
+
+
+var blurred = false;
+window.onblur = function() {
+    blurred = true;
+};
+window.onfocus = function() {
+    blurred && location.reload();
+};

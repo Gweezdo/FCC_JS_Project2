@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/css styles/desktopStyleSheet.css">
+    <!-- <link rel="stylesheet" type="text/css" href="/css styles/mobileStyleSheet.css"> -->
+    <title>Roman Numeral Converter</title>
+</head>
+
+<body>
+    <div id="container">
+        <div class="heading">
+            <h1 id="main-heading" class="heading">Decimal to Roman Numeral Converter</h1>
+            <p id="sub-heading" class="heading">Convert decimal numbers to roman numbers</p>
+        </div>
+        <div id="input-field">
+            <input type="text" name="userInput"  id="user-input" placeholder="Enter any number here" required>
+            <button id="btn" onclick=output()>SUBMIT</button>
+        </div>
+        <div id="messages">
+            <!-- <p id="empty-input-msg" class="visibility">Please enter a word or number to check if it is a palindrome.</p> -->
+            <p id="yes-msg" class="visibility">It's a palindrome!</p>
+            <p id="no-msg" class="visibility">Nope, not a palindrome.</p>
+        </div>
+        <div class="output-container">
+            <div id="iconDiv">
+                <svg id="check-icon" class="icon visibility">
+                    <use xlink:href="/icons/thumbs-up-emoji.svg#image0"></use>
+                </svg>
+                <!-- <p id=test>&#x1F44D;</p> -->
+                <svg id="cross-icon" class="icon visibility">
+                    <use xlink:href="/icons/blank-face-emoji.svg#image1"></use>
+                </svg>
+            </div>
+
+            <div id="outputDiv">
+
+            </div>
+        </div>
+        <div class=btnContainer>
+            <button id="mobileBtn" onclick=output()>SUBMIT</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>Developed my Zjak Theron & designed by Daleen Rabe</p>
+    </footer>
+    
+    <script src="Project2.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</body>
+</html>
