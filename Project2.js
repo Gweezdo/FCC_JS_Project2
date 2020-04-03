@@ -93,26 +93,35 @@ function convertToRoman(num) {
 }
 
 
-convertToRoman(10);
+function output() {
 
-
-
-  function output() {
+    var decimalNum = document.getElementById("user-input").value
     var answer = convertToRoman(document.getElementById("user-input").value);
 
-    if (answer.isAlpha()) {
-      document.getElementById("outputDiv").innerHTML = answer;
-    }else{
-        pass    
+    if (decimalNum.match(/[a-zA-Z\W]/gi)) {
+      $("#input-field").css("border", "2px solid #D93D04");
+      $("#user-input").css("background", "#FDCCCC");
+      $("#btn").css("color", "#5F2C00");
+    
+    } else {
+      if (parseInt(decimalNum) <= 3000000) {
+        $("#cross-icon").css("display", "none");
+        $("#No-outputDiv").css("display", "none");
+        $("#outputDiv").css("display", "block");
+        return (document.getElementById("outputDiv").innerHTML = answer);
+      } else if (BigInt(decimalNum) > 3000000) {
+        $("#cross-icon").css("display", "block");
+        $("#outputDiv").css("display", "none");
+        $("#No-outputDiv").css("display", "block");
+        var outputString = document.getElementById("no-msg").textContent;
+        return (document.getElementById(
+          "No-outputDiv"
+        ).innerHTML = outputString);
+      }
     }
-   
-  }
-
+    
+}
 
 var blurred = false;
-window.onblur = function() {
-    blurred = true;
-};
-window.onfocus = function() {
-    blurred && location.reload();
-};
+window.onblur = function() {blurred = true;};
+window.onfocus = function() {blurred && location.reload();};
