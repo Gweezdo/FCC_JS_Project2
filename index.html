@@ -10,39 +10,38 @@
 
 <body>
     <div id="container">
+
         <div class="heading">
             <h1 id="main-heading" class="heading">Decimal to Roman Numeral Converter</h1>
             <p id="sub-heading" class="heading">Convert decimal numbers to roman numbers</p>
         </div>
-        <div id="input-field">
-            <input type="text" name="userInput"  id="user-input" placeholder="Enter any number here" required>
-            <button id="btn" onclick=output()>SUBMIT</button>
+        <div>
+            <div id="input-field">
+                <input type="text" name="userInput"  id="user-input" placeholder="Enter any number here" required>
+                <button id="btn" onclick=output()>SUBMIT</button>
+            </div>
+            <div id="errorOutputDiv"></div>
         </div>
+
         <div id="messages">
-            <!-- <p id="yes-msg" class="visibility">It's a palindrome!</p> -->
-            <p id="no-msg" class="visibility">BOO! Number is so big you've scared the Romans away.</p>
+            <p id="ghost-msg" class="visibility">BOO! Number is so big you've scared the Romans away.</p>
+            <p id="error-msg" class="visibility">*Special characters and letters are not accepted.</p>
         </div>
+        
         <div class="output-container">
             <div id="iconDiv">
-                <!-- <svg id="check-icon" class="icon visibility">
-                    <use xlink:href="/icons/thumbs-up-emoji.svg#image0"></use>
-                </svg> -->
-
-                <svg id="cross-icon" class="icon visibility">
+                <svg id="ghost-icon" class="icon visibility">
                     <use xlink:href="/icons/ghost.svg#image1"></use>
                 </svg>
             </div> 
-
-            <div id="outputDiv">
-
-            </div>
-            <div id=No-outputDiv>
-
-            </div>
+            <div id="romanOutputDiv"></div>
+            <div id=ghostOutputDiv></div>
         </div>
+
         <div class=btnContainer>
             <button id="mobileBtn" onclick=output()>SUBMIT</button>
         </div>
+
     </div>
 
     <footer>

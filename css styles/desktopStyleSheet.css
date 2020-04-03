@@ -61,7 +61,7 @@ body{
 #user-input{
     position: absolute;
     height: 100%;
-    width: 45.9rem;
+    width: 43.0rem;
     border-radius: 0.4rem;
     padding: 0 1.6rem 0 1.6rem;
     font-style: normal;
@@ -113,20 +113,8 @@ body{
     left: 25%;
 }
 
-.output-container #iconDiv #check-icon{
-    display: none;
-    position: absolute;
-    line-height: 137px;
-    left: calc(50% - 100px/2 - 0.5px);
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    z-index: 4;
-    width: 10rem;
-    height: 10rem;
-}
 
-.output-container #iconDiv #cross-icon{
+.output-container #iconDiv #ghost-icon{
     display: none;
     position: absolute;
     line-height: 137px;
@@ -139,7 +127,7 @@ body{
     height: 10rem;
 }
 
-#outputDiv{
+#romanOutputDiv{
     position: absolute;
     font-family: 'Times New Roman', Times, serif;
     font-weight: normal;
@@ -153,15 +141,29 @@ body{
     z-index: 99;
 }
 
-#No-outputDiv{
+#ghostOutputDiv{
     position: absolute;
     font-weight: 500;
     font-size: 2.0rem;
     line-height: 2.7rem;
     margin: 13rem 0 0 0;
-    color: #FFFFFF;
+    color: black;
     width: 100%;
     text-align: center;
+}
+
+#errorOutputDiv{
+    position: relative;
+    font-weight: 500;
+    font-size: 2.0rem;
+    line-height: 2.7rem;
+    margin: 1rem 0 0 0;
+    color: black;
+    width: 100%;
+    text-align: left;
+    /* background-color: red; */
+    left: calc(50% - 589px/2 - 0.5px);
+    /* display: block; */
 }
 
 footer{

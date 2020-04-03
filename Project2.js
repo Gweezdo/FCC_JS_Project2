@@ -92,34 +92,68 @@ function convertToRoman(num) {
     return finalNum;
 }
 
+function setErrorState(){
+    $("#input-field").css("border", "2px solid #D93D04");
+    $("#user-input").css("background", "#FDCCCC");
+    $("#btn").css("background", "#EB3159");
+    $("#btn").css("color", "#5F2C00");
+    $("#btn").css("opacity", "0.5");
+    $("#errorOutputDiv").css("display", "block");
+}
+
+function clearErrorState(){
+    $("#input-field").css("border", "none");
+    $("#user-input").css("background", "rgba(255, 255, 255, 0.8");
+    $("#btn").css("background", "#F27405");
+    $("#btn").css("color", "#000");
+    $("#btn").css("opacity", "1");
+    $("#errorOutputDiv").css("display", "none");
+}
+
+function setRomanState(){
+    $("#ghost-icon").css("display", "none");
+    $("#errorOutputDiv").css("display", "none");
+    $("#romanOutputDiv").css("display", "block");
+}
+
+function clearRomanState(){
+    $("#romanOutputDiv").css("display", "none");
+}
+
+function setGhostState(){
+    $("#ghost-icon").css("display", "block");
+    $("#ghostOutputDiv").css("display", "block");
+} 
+
+function clearGhostState(){
+    $("#ghost-icon").css("display", "none");
+    $("#ghostOutputDiv").css("display", "none");
+}
 
 function output() {
-
     var decimalNum = document.getElementById("user-input").value
     var answer = convertToRoman(document.getElementById("user-input").value);
 
-    if (decimalNum.match(/[a-zA-Z\W]/gi)) {
-      $("#input-field").css("border", "2px solid #D93D04");
-      $("#user-input").css("background", "#FDCCCC");
-      $("#btn").css("color", "#5F2C00");
-    
-    } else {
-      if (parseInt(decimalNum) <= 3000000) {
-        $("#cross-icon").css("display", "none");
-        $("#No-outputDiv").css("display", "none");
-        $("#outputDiv").css("display", "block");
-        return (document.getElementById("outputDiv").innerHTML = answer);
-      } else if (BigInt(decimalNum) > 3000000) {
-        $("#cross-icon").css("display", "block");
-        $("#outputDiv").css("display", "none");
-        $("#No-outputDiv").css("display", "block");
-        var outputString = document.getElementById("no-msg").textContent;
-        return (document.getElementById(
-          "No-outputDiv"
-        ).innerHTML = outputString);
-      }
+    if(decimalNum.match(/[a-zA-Z\W]/gi)) {
+        setErrorState()
+        clearRomanState()
+        clearGhostState()
+        var outputString = document.getElementById("error-msg").textContent;
+        return (document.getElementById("errorOutputDiv").innerHTML = outputString);
+
+    }else if(parseInt(decimalNum) <= 3000000) {
+        setRomanState()
+        clearErrorState()
+        clearGhostState()
+        return (document.getElementById("romanOutputDiv").innerHTML = answer);
+
+    }else if (BigInt(decimalNum) > 3000000) {
+        setGhostState()
+        clearErrorState()
+        clearRomanState()
+        var outputString = document.getElementById("ghost-msg").textContent;
+        return (document.getElementById("ghostOutputDiv").innerHTML = outputString);
     }
-    
 }
 
 var blurred = false;
